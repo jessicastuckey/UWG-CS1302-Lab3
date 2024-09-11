@@ -1,9 +1,11 @@
 package edu.westga.cs1302.cms.view;
 
+
 import edu.westga.cs1302.cms.model.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -20,6 +22,9 @@ public class MainWindow {
 	private TextField grade;
 	@FXML
 	private ListView<Student> students;
+	@FXML
+	private Label averageLabel;
+
 
 	@FXML
 	void addStudent(ActionEvent event) {
@@ -55,6 +60,17 @@ public class MainWindow {
 
 		}
 	}
+		
+	@FXML
+	void getAverageClicked(ActionEvent event) {
+		double sum = 0.0;
+		int size = this.students.getItems().size();
+		for (Student currStudent : this.students.getItems()) {
+			sum += currStudent.getGrade();
+		}
+		double average = sum/size;
+		this.averageLabel.setText("Average: " + String.format("%.2f", average));
+	    }
 
 	@FXML
 	void initialize() {
