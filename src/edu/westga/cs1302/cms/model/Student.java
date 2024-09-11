@@ -43,4 +43,12 @@ public class Student {
 		return this.name;
 	}
 	
+	/** Return the grade of the student
+	 * 
+	 * @return the grade of the student
+	 */
+	
+	public double getGrade() {
+		return this.grade;
+	}
 }
