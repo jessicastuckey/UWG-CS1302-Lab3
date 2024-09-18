@@ -1,4 +1,4 @@
-package edu.westga.cs1302.bill.test.model.bill_textifier;
+package edu.westga.cs1302.bill.test.model.billtextifier;
 
 import static org.junit.jupiter.api.Assertions.*;
 
